@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--<Compile Include="..\..\..\..\build_isolated\ros_csharp_interop\ros_csharp_interop_SWIG.cs" Link="ros_csharp_interop_SWIG.cs" />-->
+    <Compile Include="$(ROS_BUILD_DIR)/ros_csharp_interop_SWIG.cs" Link="ros_csharp_interop_SWIG.cs" />
+  </ItemGroup>
+</Project>
