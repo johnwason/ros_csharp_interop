@@ -94,7 +94,7 @@ namespace ros_csharp_interop
             Debug.Assert(write_func != null);
         }
 
-        internal unsafe void publish(T msg)
+        public unsafe void publish(T msg)
         {
             var mem_writer = new MemoryStream();
             var binary_writer = new BinaryWriter(mem_writer);

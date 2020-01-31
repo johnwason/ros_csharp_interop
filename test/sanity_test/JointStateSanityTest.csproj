@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <StartupObject>JointStateSanityTest.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ros_csharp_interop">
+      <HintPath>$(ROS_LIB_DIR)/ros_csharp_interop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  
+
+</Project>
