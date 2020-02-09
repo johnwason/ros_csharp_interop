@@ -139,10 +139,10 @@ target_link_libraries(ros_csharp_interop_native
    ${catkin_LIBRARIES}
 )
 
-# add_custom_target(ros_csharp_interop ALL COMMAND 
-#     ${DOTNET} build ${CMAKE_CURRENT_SOURCE_DIR}/src/csharp/ros_csharp_interop.csproj 
-#     -o ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION} -p:ROS_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}
-#     DEPENDS ros_csharp_interop_native)
+add_custom_target(ros_csharp_interop ALL COMMAND 
+    ${DOTNET} build ${CMAKE_CURRENT_SOURCE_DIR}/src/csharp/ros_csharp_interop.csproj 
+    -o ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION} -p:ROS_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}
+    DEPENDS ros_csharp_interop_native)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -220,11 +220,11 @@ install(TARGETS ros_csharp_interop_native
 ## Testing ##
 #############
 
-# add_custom_target(JointStateSanityTest ALL COMMAND 
-#     ${DOTNET} build ${CMAKE_CURRENT_SOURCE_DIR}/test/sanity_test/JointStateSanityTest.csproj
-#     -o ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION} 
-#     -p:ROS_LIB_DIR=${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION}
-#     DEPENDS ros_csharp_interop)
+add_custom_target(JointStateSanityTest ALL COMMAND 
+    ${DOTNET} build ${CMAKE_CURRENT_SOURCE_DIR}/test/sanity_test/JointStateSanityTest.csproj
+    -o ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION} 
+    -p:ROS_LIB_DIR=${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION}
+    DEPENDS ros_csharp_interop)
 
 ## Add gtest based cpp test target and link libraries
 # catkin_add_gtest(${PROJECT_NAME}-test test/test_ros_csharp_interop.cpp)
